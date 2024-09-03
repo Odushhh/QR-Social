@@ -24,13 +24,14 @@ Simply scan the QR code generated and share all (or one of) your social media ha
 1. Choose your platform & Input a link to that social media profile.
 
 
-![Screenshot 1114](https://github.com/user-attachments/assets/7bd86cf7-a38e-434a-b782-a98f255362dc)
+![Screenshot 1115](https://github.com/user-attachments/assets/c6c996ee-e9ee-4070-92b0-243eec5c3f6f)
+
 
    
 2. Generate a custom QR Code
 
 
-   ![Screenshot 1113](https://github.com/user-attachments/assets/e6b6b88c-bdbd-4709-bc33-55201ef5aa9b)
+![Screenshot 1113](https://github.com/user-attachments/assets/e6b6b88c-bdbd-4709-bc33-55201ef5aa9b)
 
   
 3. Share the QR code through socials or simply show it to someone to scan it
