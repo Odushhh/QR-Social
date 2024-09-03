@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media QR Code Generator</title>
-    
+    <title>Social Media QR Code Generator</title>    
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -34,9 +34,20 @@
             <button type="submit" class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Generate QR Code</button>
         </form>
         <div id="qrCode" class="mt-6 flex justify-center"></div>
+        <div id="shareButtons" class="mt-6 flex justify-center space-x-4 hidden">
+            <button id="shareButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <i class="fas fa-share-alt mr-2"></i>Share
+            </button>
+            <a id="downloadButton" href="#" download="qr_code.png" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                <i class="fas fa-download mr-2"></i>Download
+            </a>
+            
+        </div>
     </div>
 
     <script>
+        let qrImageUrl = null;
+        
         document.getElementById('qrForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -56,17 +67,44 @@
             })
             .then(blob => {
                 const img = document.createElement('img');
+                qrImageUrl = URL.createObjectURL(blob);
                 img.src = URL.createObjectURL(blob);
                 img.className = 'w-64 h-64';
                 const qrCode = document.getElementById('qrCode');
                 qrCode.innerHTML = '';
                 qrCode.appendChild(img);
+                document.getElementById('shareButtons').classList.remove('hidden');
+                updateShareLinks();
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert('An error occurred. Please try again.');
             });
-        });
+        function updateShareLinks() {
+            const twitterShare = document.getElementById('twitterShare');
+            const facebookShare = document.getElementById('facebookShare');
+            const shareText = "Check out my social media QR code!";
+            const shareUrl = window.location.href;
+
+            twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            facebookShare.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+        }
+
+        document.getElementById('shareButton').addEventListener('click', async () => {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: 'My Social Media QR Code',
+                        text: 'Check out my social media QR code!',
+                        url: window.location.href
+                    });
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            } else {
+                alert('Web Share API is not supported in your browser. Please use the other share buttons.');
+            }
+        });        
     </script>
 </body>
 </html>
