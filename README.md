@@ -22,10 +22,16 @@ Simply scan the QR code generated and share all (or one of) your social media ha
 
 ## How it Works
 1. Choose your platform & Input a link to that social media profile.
-   ![Screenshot 11111](https://github.com/user-attachments/assets/60331999-0ad5-4a00-b339-1975e7a63ace)
+
+
+![Screenshot 1114](https://github.com/user-attachments/assets/7bd86cf7-a38e-434a-b782-a98f255362dc)
+
    
 2. Generate a custom QR Code
-   ![Screenshot 1112](https://github.com/user-attachments/assets/8123a823-8916-4d02-8ebf-e7bfb807c8f4)
+
+
+   ![Screenshot 1113](https://github.com/user-attachments/assets/e6b6b88c-bdbd-4709-bc33-55201ef5aa9b)
+
   
 3. Share the QR code through socials or simply show it to someone to scan it
    ### **TBC**
@@ -38,10 +44,11 @@ Simply scan the QR code generated and share all (or one of) your social media ha
 
 
 ## Any questions/concerns/suggestions?
-> HMU on any of these platforms then
+HMU on any of these platforms then
+
 > [Twitter] (https://x.com/odumzeez)
 > [LinkedIn] (https://www.linkedin.com/in/adrian-oduma-4374a4252/)
 >
 
-# Feel free to contribute as well!
+### More features OTW
 
